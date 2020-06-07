@@ -1,0 +1,50 @@
+# Playbook for running ubuntu post installation steps
+# Prerequisites - clean install and ansible
+---
+- name: "Post installation steps"
+  hosts: 127.0.0.1
+  connection: local
+  strategy: debug
+
+  vars:
+    vagrant_version: "2.2.9"
+
+  tasks:
+
+#  - name: "Install Midnight commander"
+#    apt:
+#      name: mc
+#      update_cache: yes
+#    become: yes
+#
+#  - name: "Set timezone"
+#    shell: |
+#      timedatectl set-timezone Europe/Prague
+#    become: yes
+#
+#  - name: "Check if Vagrant is installed"
+#    command: dpkg-query -W vagrant
+#    register: vagrant_check_deb
+#    failed_when: vagrant_check_deb.rc > 1
+#    changed_when: vagrant_check_deb.rc == 1
+#
+#  - name: "Get Vagrant v{{ vagrant_version }}"
+#    get_url: 
+#      url="https://releases.hashicorp.com/vagrant/{{ vagrant_version }}/vagrant_{{ vagrant_version }}_x86_64.deb"
+#      dest="/home/{{ ansible_env.USER }}/Downloads/vagrant_{{ vagrant_version }}_x86_64.deb"
+#    when: vagrant_check_deb.rc == 1
+#
+#  - name: "Install Vagrant v{{ vagrant_version }}"
+#    apt: deb="/home/{{ ansible_env.USER }}/Downloads/vagrant_{{ vagrant_version }}_x86_64.deb"
+#    become: yes
+#    when: vagrant_check_deb.rc == 1
+#
+#  - name: "Make Vagrant project for testing Ansible NAS"
+#    file:
+#      path: /home/{{ ansible_env.USER }}/vagrant/ansible-nas
+#      state: directory      
+
+#  - name: "Install KVM vagrant plugin"
+#    shell: |
+#      vagrant plugin install vagrant-kvm
+#
